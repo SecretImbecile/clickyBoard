@@ -1,0 +1,13 @@
+(module Connectors:1pin (layer F.Cu) (tedit 596FEEF2)
+  (descr "module 1 pin (ou trou mecanique de percage)")
+  (tags DEV)
+  (fp_text reference CAM (at 0 -3.048) (layer F.SilkS) hide
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value 1pin (at 0 3) (layer F.Fab)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_circle (center 0 0) (end 2.6 0) (layer F.CrtYd) (width 0.05))
+  (fp_circle (center 0 0) (end 0 -2.286) (layer F.SilkS) (width 0.12))
+  (pad "" np_thru_hole oval (at 0 0) (size 2 17) (drill oval 2 17) (layers *.Cu *.Mask))
+)

@@ -1,0 +1,341 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:switches
+LIBS:clickyHAT-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Clicky HAT Schematic"
+Date "2017-07-19"
+Rev "0.2"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Raspberry_Pi_2_3 J1
+U 1 1 596FB678
+P 6850 2650
+F 0 "J1" H 7550 1400 50  0000 C CNN
+F 1 "Raspberry_Pi_2_3" H 6450 3550 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x20_Pitch2.54mm" H 7850 3900 50  0001 C CNN
+F 3 "" H 6900 2500 50  0001 C CNN
+	1    6850 2650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R1
+U 1 1 596FB71B
+P 4300 4550
+F 0 "R1" V 4380 4550 50  0000 C CNN
+F 1 "1K" V 4300 4550 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 4230 4550 50  0001 C CNN
+F 3 "" H 4300 4550 50  0001 C CNN
+	1    4300 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_Push SW1
+U 1 1 596FBABC
+P 3400 5050
+F 0 "SW1" H 3450 5150 50  0000 L CNN
+F 1 "SW_Push" H 3400 4990 50  0000 C CNN
+F 2 "Keyboard:CHERRY_PCB_100H" H 3400 5250 50  0001 C CNN
+F 3 "" H 3400 5250 50  0001 C CNN
+	1    3400 5050
+	0    1    1    0   
+$EndComp
+$Comp
+L SW_Push SW2
+U 1 1 596FBB2D
+P 3700 5050
+F 0 "SW2" H 3750 5150 50  0000 L CNN
+F 1 "SW_Push" H 3700 4990 50  0000 C CNN
+F 2 "Keyboard:CHERRY_PCB_100H" H 3700 5250 50  0001 C CNN
+F 3 "" H 3700 5250 50  0001 C CNN
+	1    3700 5050
+	0    1    1    0   
+$EndComp
+$Comp
+L SW_Push SW3
+U 1 1 596FBB58
+P 4000 5050
+F 0 "SW3" H 4050 5150 50  0000 L CNN
+F 1 "SW_Push" H 4000 4990 50  0000 C CNN
+F 2 "Keyboard:CHERRY_PCB_100H" H 4000 5250 50  0001 C CNN
+F 3 "" H 4000 5250 50  0001 C CNN
+	1    4000 5050
+	0    1    1    0   
+$EndComp
+$Comp
+L SW_Push SW4
+U 1 1 596FBB82
+P 4300 5050
+F 0 "SW4" H 4350 5150 50  0000 L CNN
+F 1 "SW_Push" H 4300 4990 50  0000 C CNN
+F 2 "Keyboard:CHERRY_PCB_100H" H 4300 5250 50  0001 C CNN
+F 3 "" H 4300 5250 50  0001 C CNN
+	1    4300 5050
+	0    1    1    0   
+$EndComp
+$Comp
+L BS170 Q1
+U 1 1 596FD715
+P 5550 5050
+F 0 "Q1" H 5750 5125 50  0000 L CNN
+F 1 "BS170" H 5750 5050 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-220_Horizontal" H 5750 4975 50  0001 L CIN
+F 3 "" H 5550 5050 50  0001 L CNN
+	1    5550 5050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L LED D1
+U 1 1 596FE656
+P 5250 3850
+F 0 "D1" H 5250 3950 50  0000 C CNN
+F 1 "LED" H 5250 3750 50  0000 C CNN
+F 2 "LEDs:LED_D3.0mm" H 5250 3850 50  0001 C CNN
+F 3 "" H 5250 3850 50  0001 C CNN
+	1    5250 3850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L LED D2
+U 1 1 596FE6CE
+P 5250 4200
+F 0 "D2" H 5250 4300 50  0000 C CNN
+F 1 "LED" H 5250 4100 50  0000 C CNN
+F 2 "LEDs:LED_D3.0mm" H 5250 4200 50  0001 C CNN
+F 3 "" H 5250 4200 50  0001 C CNN
+	1    5250 4200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L LED D3
+U 1 1 596FE716
+P 5650 3850
+F 0 "D3" H 5650 3950 50  0000 C CNN
+F 1 "LED" H 5650 3750 50  0000 C CNN
+F 2 "LEDs:LED_D3.0mm" H 5650 3850 50  0001 C CNN
+F 3 "" H 5650 3850 50  0001 C CNN
+	1    5650 3850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L LED D4
+U 1 1 596FE765
+P 5650 4200
+F 0 "D4" H 5650 4300 50  0000 C CNN
+F 1 "LED" H 5650 4100 50  0000 C CNN
+F 2 "LEDs:LED_D3.0mm" H 5650 4200 50  0001 C CNN
+F 3 "" H 5650 4200 50  0001 C CNN
+	1    5650 4200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R3
+U 1 1 596FEDB1
+P 5150 4600
+F 0 "R3" V 5230 4600 50  0000 C CNN
+F 1 "100" V 5150 4600 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5080 4600 50  0001 C CNN
+F 3 "" H 5150 4600 50  0001 C CNN
+	1    5150 4600
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6150 3550
+NoConn ~ 6450 3550
+NoConn ~ 6550 3550
+NoConn ~ 6650 3550
+NoConn ~ 6950 3550
+NoConn ~ 7050 3550
+NoConn ~ 7150 3550
+NoConn ~ 7550 3550
+NoConn ~ 7650 3550
+NoConn ~ 7650 1750
+NoConn ~ 7550 1750
+NoConn ~ 7350 1750
+NoConn ~ 7250 1750
+NoConn ~ 7050 1750
+NoConn ~ 6950 1750
+NoConn ~ 6850 1750
+NoConn ~ 6750 1750
+NoConn ~ 6650 1750
+NoConn ~ 6450 1750
+NoConn ~ 6350 1750
+NoConn ~ 6150 1750
+NoConn ~ 6050 1750
+NoConn ~ 5950 1750
+NoConn ~ 5550 2450
+NoConn ~ 5550 2850
+$Comp
+L R R2
+U 1 1 597017F5
+P 5950 5100
+F 0 "R2" V 6030 5100 50  0000 C CNN
+F 1 "1K" V 5950 5100 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5880 5100 50  0001 C CNN
+F 3 "" H 5950 5100 50  0001 C CNN
+	1    5950 5100
+	0    1    1    0   
+$EndComp
+$Comp
+L R R4
+U 1 1 596FF538
+P 5350 4600
+F 0 "R4" V 5430 4600 50  0000 C CNN
+F 1 "100" V 5350 4600 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5280 4600 50  0001 C CNN
+F 3 "" H 5350 4600 50  0001 C CNN
+	1    5350 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R5
+U 1 1 596FF58B
+P 5550 4600
+F 0 "R5" V 5630 4600 50  0000 C CNN
+F 1 "100" V 5550 4600 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5480 4600 50  0001 C CNN
+F 3 "" H 5550 4600 50  0001 C CNN
+	1    5550 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R6
+U 1 1 596FF5DF
+P 5750 4600
+F 0 "R6" V 5830 4600 50  0000 C CNN
+F 1 "100" V 5750 4600 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5680 4600 50  0001 C CNN
+F 3 "" H 5750 4600 50  0001 C CNN
+	1    5750 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 4700 4300 4850
+Wire Wire Line
+	4000 4700 4000 4850
+Wire Wire Line
+	3700 4700 3700 4850
+Wire Wire Line
+	3400 4700 3400 4850
+Wire Wire Line
+	6350 5300 6350 3550
+Wire Wire Line
+	7250 5350 7250 3550
+Wire Wire Line
+	6750 5400 6750 3550
+Wire Wire Line
+	6850 5450 6850 3550
+Wire Wire Line
+	5550 2750 5450 2750
+Wire Wire Line
+	5250 4000 5250 4050
+Wire Wire Line
+	5650 4050 5650 4000
+Wire Wire Line
+	5650 3700 5250 3700
+Wire Wire Line
+	5450 2750 5450 3700
+Connection ~ 5450 3700
+Wire Wire Line
+	5650 4350 5650 4450
+Wire Wire Line
+	5550 4450 5750 4450
+Connection ~ 5650 4450
+Wire Wire Line
+	5250 4350 5250 4450
+Wire Wire Line
+	5150 4450 5350 4450
+Connection ~ 5250 4450
+Wire Wire Line
+	5150 4750 5750 4750
+Connection ~ 5350 4750
+Connection ~ 5550 4750
+Wire Wire Line
+	5450 4750 5450 4850
+Connection ~ 5450 4750
+Wire Wire Line
+	5800 5100 5750 5100
+Wire Wire Line
+	6100 5100 6250 5100
+Wire Wire Line
+	6250 5100 6250 3550
+Wire Wire Line
+	3400 5250 3400 5300
+Wire Wire Line
+	3400 5300 6350 5300
+Wire Wire Line
+	3700 5250 3700 5350
+Wire Wire Line
+	3700 5350 7250 5350
+Wire Wire Line
+	4000 5250 4000 5400
+Wire Wire Line
+	4000 5400 6750 5400
+Wire Wire Line
+	4300 5250 4300 5450
+Wire Wire Line
+	4300 5450 6850 5450
+Wire Wire Line
+	8250 5650 5450 5650
+Wire Wire Line
+	5450 5650 5450 5250
+Text Notes 3750 4650 0    60   ~ 0
+Switch\nArray\n
+Text Notes 4800 4150 0    60   ~ 0
+LED\nArray
+Wire Wire Line
+	5550 2550 4300 2550
+Wire Wire Line
+	4300 2550 4300 4400
+Wire Wire Line
+	3400 4700 4300 4700
+Connection ~ 4000 4700
+Connection ~ 3700 4700
+NoConn ~ 8150 2450
+NoConn ~ 8150 2550
+NoConn ~ 8150 3050
+Wire Wire Line
+	8250 2950 8150 2950
+NoConn ~ 8150 2750
+NoConn ~ 8150 2850
+Wire Wire Line
+	8250 5650 8250 2950
+NoConn ~ 8150 2650
+NoConn ~ 8150 2350
+$EndSCHEMATC
