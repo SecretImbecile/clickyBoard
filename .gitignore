@@ -19,3 +19,10 @@ _autosave-*
 # Exported BOM files
 *.xml
 *.csv
+
+# LaTeX Documentation
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
