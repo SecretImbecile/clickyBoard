@@ -1,6 +1,8 @@
 # clickyBoard
 A Raspberry Pi add-on board that adds a simple switch and LED circuit for GPIO programming, using mechanical keyboard switches
 
+Read the [documentation file](Documentation/clickyBoard.pdf).
+
 ![clickyBoard PCB render](render.jpg)
 
 ## FAQ
