@@ -7,9 +7,9 @@
 \usepackage[colorlinks=false]{hyperref}
 
 \usepackage{listings}
-\lstset{basicstyle=\small\ttfamily,breaklines=true,numbers=left}
+\lstset{basicstyle=\small\ttfamily,breaklines=true}
 
-\setlength{\parskip}{7pt}
+\setlength{\parskip}{6pt}
 \setlength{\parindent}{0pt}
 
 %opening
@@ -173,7 +173,7 @@ The switch inputs require the internal GPIO pull-down resistors in the Raspberry
 
 The following example Python program will demonstrate the functionality of the clickyBoard. (note that \texttt{GPIO.cleanup()} is not run following this program)
 
-\begin{lstlisting}[language=Python,title=clickyboardtest.py]
+\begin{lstlisting}[language=Python,title=clickyboardtest.py,numbers=left]
 import RPi.GPIO as GPIO
 import time
 
@@ -233,15 +233,19 @@ while True:
 			\includegraphics[width=0.7\linewidth]{img/F_Ss}
 		\end{center}
 	
-\subsection{Design rules for PCB}
+	\subsection{Design rules for PCB}
 
-	The design rules used for this PCB were as follows.
+		The design rules used for this PCB were as follows.
 	
-	\begin{tabular}{c|c|c|c}
-		Clearance & Track Width & Via Size & Silkscreen line thickness \\ 
-		\hline 
-		$0.2 mm$ & $> 0.375 mm$ & n/a & $> 0.15 mm$ \\ 
-	\end{tabular} 
-	
+		\begin{tabular}{c|c|c|c}
+			Clearance & Track Width & Via Size & Silkscreen line thickness \\ 
+			\hline 
+			$0.2 mm$ & $> 0.375 mm$ & n/a & $> 0.15 mm$ \\ 
+		\end{tabular} 
 
+\section{License}
+
+	The complete hardware design for the clickyBoard, including the files made available on the clickyBoard \href{https://github.com/SecretImbecile/clickyBoard}{Github repo} and all documentation, are released in accordance with the \href{https://www.oshwa.org/definition/}{Open Source Hardware (OSHW) Definition}, under the \href{https://creativecommons.org/licenses/by-sa/4.0/}{\textbf{Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)}} license.
+	
+	Every effort has been made to comply with the OSHW statement of principles. If you feel any aspect of the OSHW priciples have been neglected, please raise the issue with the creator (a github issue report would be suitable).
 \end{document}
