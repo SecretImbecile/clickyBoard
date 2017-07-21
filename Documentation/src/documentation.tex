@@ -1,14 +1,15 @@
 \documentclass[10pt, a4paper, onesided]{article}
 
+\usepackage{dingbat}
 \usepackage{graphicx}
 \usepackage{enumitem}
-%\usepackage{abstract}
-%\renewcommand{\abstractname}{}    % clear the title
-%\renewcommand{\absnamepos}{empty} % originally center
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage[colorlinks=false]{hyperref}
 
-\setlength{\parskip}{6pt}
+\usepackage{listings}
+\lstset{basicstyle=\small\ttfamily,breaklines=true,numbers=left}
+
+\setlength{\parskip}{7pt}
 \setlength{\parindent}{0pt}
 
 %opening
@@ -27,7 +28,7 @@ Download this document at \href{https://github.com/SecretImbecile/clickyBoard}{g
 
 	The \textit{clickyBoard} is an add-on board for the Raspberry Pi computer (model B+ or later), which adds a simple switch and LED circuit for use in GPIO programming.
 	
-	The clickyBoard has been designed to use Cherry MX series switches or compatible switches from other manufacturers, a popular keyswitch designed for use in keyboards that are widely available and cheaply purchased.
+	The clickyBoard has been designed to use Cherry MX series switches or compatible switches from other manufacturers, designed for use in keyboards that are widely available and cheaply purchased.
 	
 	The board, through the Raspberry PI GPIO, provides four push-buttons inputs, as well as a single output through which you can control the four backlight LEDs under each key.
 	
@@ -36,13 +37,80 @@ Download this document at \href{https://github.com/SecretImbecile/clickyBoard}{g
 \newpage
 \section{Parts Required}
 
-	\subsection{LED and Resistor choice}
+	The following components are required to fully populate a clickyBoard:
+	
+	\begin{itemize}[noitemsep]
+		\item two $1 k\Omega$ resistors
+		\item four T1 (3mm) LEDs
+		\item two/four resistors, of a value determined in \autoref{LEDresistors}
+		\item one TO-220 package logic level power MOSFET
+		\item four Cherry MX compatible switches
+		\item a female 40-pin connector for the Raspberry Pi GPIO header\footnote{a $2\times20$ header with $2.54 mm$ ($0.1"$) pitch}
+	\end{itemize}
+	
+	\subsection{Mechanical Keyboard Switches}
+	
+	The clickyBoard has mounting holes for MX series or compatible switches. These are switches designed for use in premium computer keyboards, which are widely available, along with compatible keycaps.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.25\linewidth]{img/cherrymx}
+		\caption{A Cherry MX Blue switch}
+		\label{fig:cherrymx}
+	\end{figure}
+	
+	If you require quick delivery, the german manufactured \textit{Cherry MX} series of switches are more readily available from several on-line retailers. In the United Kingdom, one possibility would be a computer hardware retailer like \href{http://www.kustompcs.co.uk/acatalog/Keys_and_Accessories.html}{kustompcs.co.uk}. In the US and internationally, \href{http://www.wasdkeyboards.com/index.php/products/keyboard-parts.html}{wasdkeyboards.com} specialises in mechanical keyboard parts. Cherry switches are likely to cost around \pounds1 per switch.
+	
+	If you're willing to wait for shipping from China, there are several manufacturers that make compatible switches, notably \textit{Gateron} and \textit{Kailh} switches. Gateron switches can be purchased on eBay for as little as 10 for \pounds1.
+	
+	There are several types of MX switch available, denoted by the colour of their centre plunger, as shown in \autoref*{fig:cherrymx}. We recommend blue coloured switches, for full authentic clickiness, but others are available. If possible, opt for `PCB mount' switches (sometimes referred to as `5-pin'), as these have additional plastic pegs which will somewhat improve stability on the PCB.
+	
+	\begin{center}
+	\begin{tabular}{c|c|c|c}
+		Switch Colour & Click & Tactile Bump & Heavy Spring \\ 
+		\hline 
+		Blue & \checkmark & \checkmark & \\ 
+		Green & \checkmark & \checkmark & \checkmark \\ 
+		Brown &  & \checkmark & \\ 
+		Clear &  & \checkmark & \checkmark \\ 
+		Red &  &  & \\ 
+		Black &  &  & \checkmark \\ 
+	\end{tabular}
+	\end{center}
+
+	
+	
+	\subsection{LED and Resistor Choice}
 	\label{LEDresistors}
+
+	To fit within the housing of an MX compatible switch, a 3mm (T1) LED must be chosen.
 	
+	To provide ample current, the LEDs on the clickyBoard are powered through the Raspberry Pi's 5 volt supply, with the LEDs arranged in two parallel series, as shown in \autoref*{fig:documentation}.
 	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.25\linewidth]{img/resistor}
+		\caption{Wiring schematic for the four resistor sockets}
+		\label{fig:documentation}
+	\end{figure}
+	
+	The required resistance for the circuit can be calculated using the standard formula, where $V_s$ is the supply voltage, and $V_f$ is the forward voltage of the chosen LED.
+	
+	\begin{displaymath}
+		R = \frac{V_s - V_f}{I}
+	\end{displaymath}
+	
+	As each half has two LEDs in series, the forward voltage used is double the value of a single LED. For the $2 V$ $20 mA$ LEDs used in the schematic, the resistance was calculated as follows.
+	
+	\begin{displaymath}
+		R = \frac{5 V - (2 \times 2 V)}{20 \times 10^{-3}} = 50 \Omega
+	\end{displaymath}
+	
+	The circuit can therefore be completed with two $50 \Omega$ resistors. Two additional spaces are provided, so four $100 \Omega$ resistors could be used if they are more readily available.
 	
 	%\subsection{Bill of Materials}
 
+\newpage
 \section{Assembly Guide}
 
 	\subsection*{Soldering Basics}
@@ -59,13 +127,6 @@ Download this document at \href{https://github.com/SecretImbecile/clickyBoard}{g
 		For convenience, we always solder components from lowest height to highest, to maintain a steady PCB on which to work. Begin by soldering the two $1 k\Omega$ resistors in slots \texttt{r1} and \texttt{r2}.
 		
 		Next, solder the resistors for the LED array that you chose in \autoref{LEDresistors} into the sockets \texttt{r3}--\texttt{r6}. If you are using two resistors, ensure the circuit is completed1 in accordance to \autoref*{fig:documentation}.
-		
-		\begin{figure}[h]
-			\centering
-			\includegraphics[width=0.25\linewidth]{img/resistor}
-			\caption{Wiring schematic for the four resistor sockets}
-			\label{fig:documentation}
-		\end{figure}
 	
 	\subsection*{MOSFET}
 	
@@ -98,9 +159,58 @@ Download this document at \href{https://github.com/SecretImbecile/clickyBoard}{g
 		\texttt{1 4 9 11 12 13 15 16}, omitting \texttt{11} if a MOSFET was not used.
 
 
-
+\newpage
 \section{Example Code}
 
+The clickyBoard provides the following GPIO devices (all pins are GPIO board numbers):
+
+\begin{itemize}[nosep]
+	\item LED brightness control through pin \textbf{11}
+	\item switch inputs through pins \textbf{12}, \textbf{13}, \textbf{15}, and \textbf{16}
+\end{itemize}
+
+The switch inputs require the internal GPIO pull-down resistors in the Raspberry Pi to be enabled. enable them by setting up the pins with the \texttt{pull\_up\_down} parameter set to \texttt{GPIO.PUD\_DOWN}.
+
+The following example Python program will demonstrate the functionality of the clickyBoard. (note that \texttt{GPIO.cleanup()} is not run following this program)
+
+\begin{lstlisting}[language=Python,title=clickyboardtest.py]
+import RPi.GPIO as GPIO
+import time
+
+# Setup Pins
+GPIO.setmode(GPIO.BOARD)
+
+GPIO.setup(11, GPIO.OUT)
+GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(15, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+# Setup Backlight
+pwm = GPIO.PWM(11, 60)
+pwm.start(100)
+
+while True:
+	#Create a count of the buttons being pressed
+	buttons_pressed = 0
+	
+	if GPIO.input(12) == GPIO.HIGH:
+		buttons_pressed += 1
+	if GPIO.input(13) == GPIO.HIGH:
+		buttons_pressed += 1
+	if GPIO.input(15) == GPIO.HIGH:
+		buttons_pressed += 1
+	if GPIO.input(16) == GPIO.HIGH:
+		buttons_pressed += 1
+	
+	#Reduce PWM brightness based on number of buttons
+	pwm.ChangeDutyCycle(100 - (25 * buttons_pressed))
+	
+	time.sleep(0.1)
+	
+\end{lstlisting}
+
+\newpage
 \section{Technical Documentation}
 	\subsection{Schematic design for the clickyBoard}
 		\begin{center}
@@ -127,12 +237,10 @@ Download this document at \href{https://github.com/SecretImbecile/clickyBoard}{g
 
 	The design rules used for this PCB were as follows.
 	
-	\begin{tabular}{|c|c|c|c|}
-		\hline 
+	\begin{tabular}{c|c|c|c}
 		Clearance & Track Width & Via Size & Silkscreen line thickness \\ 
 		\hline 
 		$0.2 mm$ & $> 0.375 mm$ & n/a & $> 0.15 mm$ \\ 
-		\hline 
 	\end{tabular} 
 	
 
