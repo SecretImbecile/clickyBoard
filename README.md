@@ -5,6 +5,10 @@ Read the [documentation file](Documentation/clickyBoard.pdf).
 
 ![clickyBoard PCB render](render.jpg)
 
+## Keyboard.pretty
+
+Kicad files uses [Keyboard.pretty](https://github.com/stormbard/Keyboard.pretty), the KiCad Module Repository for keyboard PCB creation.
+
 ## FAQ
 
 ### What does clickyBoard add to my Pi?
