@@ -108,6 +108,8 @@ Download this document at \href{https://github.com/SecretImbecile/clickyBoard}{g
 	
 	The circuit can therefore be completed with two $50 \Omega$ resistors. Two additional spaces are provided, so four $100 \Omega$ resistors could be used if they are more readily available.
 	
+	Because each LED has a forward voltage $\le 2.5 V$, blue LEDs cannot normally be used. Read \autoref{LEDerror2} for more information.
+	
 	%\subsection{Bill of Materials}
 
 \newpage
@@ -136,14 +138,7 @@ Download this document at \href{https://github.com/SecretImbecile/clickyBoard}{g
 	
 	\subsection*{Switches \& LEDs}
 	
-		\subsubsection*{Erratum: LED pad direction}
-		\label{LEDerror}
-		
-			Please note that the solder pads for the LEDs are reversed. By convention, the square solder pad indicates the positive side of a diode. However, because of an update to the \textit{KiCad} software, the pins in the component library were reversed. You should therefore solder the (longer) \textbf{positive} lead of the LEDs into the \textbf{circular} pads.
-			
-			\begin{quote}
-				\textit{...all diodes in KiCad's standard libraries have seen their pin numbers swapped. This is to be in line with most other software and the IPC standard as well, which states that cathode should be pin 1.}\footnote{\url{https://forum.kicad.info/t/important-announcement-diode-pins-swapped-in-standard-kicad-libraries/820}}
-			\end{quote}
+		note: solder pad shapes for the LEDs are reversed from the usual convention. see \autoref{LEDerror} for more details.
 	
 		\subsubsection*{Switch assembly}
 	
@@ -233,7 +228,7 @@ while True:
 			\includegraphics[width=0.7\linewidth]{img/F_Ss}
 		\end{center}
 	
-	\subsection{Design rules for PCB}
+	\subsection*{Design rules for PCB}
 
 		The design rules used for this PCB were as follows.
 	
@@ -241,7 +236,23 @@ while True:
 			Clearance & Track Width & Via Size & Silkscreen line thickness \\ 
 			\hline 
 			$0.2 mm$ & $\ge 0.375 mm$ & n/a & $\ge 0.15 mm$ \\ 
-		\end{tabular} 
+		\end{tabular}
+	
+	\subsection{Board errors in version 1.0}
+	
+		\subsubsection*{LED pad direction}
+		\label{LEDerror}
+		
+		Please note that the solder pads for the LEDs are reversed. By convention, the square solder pad indicates the positive side of a diode. However, because of an update to the \textit{KiCad} software, the pins in the component library were reversed. You should therefore solder the (longer) \textbf{positive} lead of the LEDs into the \textbf{circular} pads.
+		
+		\begin{quote}
+			\textit{...all diodes in KiCad's standard libraries have seen their pin numbers swapped. This is to be in line with most other software and the IPC standard as well, which states that cathode should be pin 1.}\footnote{\url{https://forum.kicad.info/t/important-announcement-diode-pins-swapped-in-standard-kicad-libraries/820}}
+		\end{quote}
+	
+		\subsubsection*{LED array voltage}
+		\label{LEDerror2}
+		
+		LEDs were arranged into 2 parallel series as shown in \autoref{fig:documentation}, providing each LED a maximum voltage of 2.5V. Because blue LEDs require a higher forward voltage, most blue and white LEDs will not work on version 1.0 of the clickyBoard, limiting you to red, yellow or green backlighting in most cases. This may be remedied in a future version of the clickyBoard.
 
 \section{License}
 
