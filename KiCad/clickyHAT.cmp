@@ -1,0 +1,203 @@
+Cmp-Mod V01 Created by PcbNew   date = 25/07/2017 23:25:41
+
+BeginCmp
+TimeStamp = 59728F2B
+Path = 
+Reference = MNT4;
+ValeurCmp = 1pin;
+IdModule  = Connectors:1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 59728EBF
+Path = 
+Reference = MNT3;
+ValeurCmp = 1pin;
+IdModule  = Connectors:1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 59728E3C
+Path = 
+Reference = MNT1;
+ValeurCmp = 1pin;
+IdModule  = Connectors:1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 59728DCF
+Path = 
+Reference = MNTB2;
+ValeurCmp = 1pin;
+IdModule  = Connectors:1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 596FB424
+Path = /596FD715
+Reference = Q1;
+ValeurCmp = BS170;
+IdModule  = TO_SOT_Packages_THT:TO-220_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 596FBF82
+Path = 
+Reference = MNTB3;
+ValeurCmp = 1pin;
+IdModule  = Connectors:1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 596FBF72
+Path = 
+Reference = MNTB4;
+ValeurCmp = 1pin;
+IdModule  = Connectors:1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 596FBF6A
+Path = 
+Reference = MNT2;
+ValeurCmp = 1pin;
+IdModule  = Connectors:1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 596FB3E4
+Path = /596FE6CE
+Reference = D2;
+ValeurCmp = LED;
+IdModule  = LEDs:LED_D3.0mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 596FB3EA
+Path = /596FE716
+Reference = D3;
+ValeurCmp = LED;
+IdModule  = LEDs:LED_D3.0mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 596FB3F0
+Path = /596FE765
+Reference = D4;
+ValeurCmp = LED;
+IdModule  = LEDs:LED_D3.0mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 596FB41C
+Path = /596FB678
+Reference = J1;
+ValeurCmp = Raspberry_Pi_2_3;
+IdModule  = Pin_Headers:Pin_Header_Straight_2x20_Pitch2.54mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 596FB475
+Path = /596FBABC
+Reference = SW1;
+ValeurCmp = SW_Push;
+IdModule  = Keyboard:CHERRY_PCB_100H;
+EndCmp
+
+BeginCmp
+TimeStamp = 596FB47E
+Path = /596FBB2D
+Reference = SW2;
+ValeurCmp = SW_Push;
+IdModule  = Keyboard:CHERRY_PCB_100H;
+EndCmp
+
+BeginCmp
+TimeStamp = 596FB487
+Path = /596FBB58
+Reference = SW3;
+ValeurCmp = SW_Push;
+IdModule  = Keyboard:CHERRY_PCB_100H;
+EndCmp
+
+BeginCmp
+TimeStamp = 596FB490
+Path = /596FBB82
+Reference = SW4;
+ValeurCmp = SW_Push;
+IdModule  = Keyboard:CHERRY_PCB_100H;
+EndCmp
+
+BeginCmp
+TimeStamp = 596FB769
+Path = 
+Reference = MNTB1;
+ValeurCmp = 1pin;
+IdModule  = Connectors:1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 59709A1F
+Path = /596FB71B
+Reference = R1;
+ValeurCmp = 1K;
+IdModule  = Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 59709A35
+Path = /597017F5
+Reference = R2;
+ValeurCmp = 1K;
+IdModule  = Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 59709A4B
+Path = /596FEDB1
+Reference = R3;
+ValeurCmp = 100;
+IdModule  = Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 59709A61
+Path = /596FF538
+Reference = R4;
+ValeurCmp = 100;
+IdModule  = Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 59709A77
+Path = /596FF58B
+Reference = R5;
+ValeurCmp = 100;
+IdModule  = Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 59709A8D
+Path = /596FF5DF
+Reference = R6;
+ValeurCmp = 100;
+IdModule  = Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 59729061
+Path = 
+Reference = REF***;
+ValeurCmp = OSHW-Logo_11.4x12mm_SilkScreen;
+IdModule  = Symbols:OSHW-Logo_11.4x12mm_SilkScreen;
+EndCmp
+
+BeginCmp
+TimeStamp = 596FB3DE
+Path = /596FE656
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = LEDs:LED_D3.0mm;
+EndCmp
+
+EndListe
