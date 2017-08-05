@@ -1,4 +1,4 @@
-update=20/07/2017 19:32:55
+update=25/07/2017 23:08:51
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,6 +23,16 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
 [general]
 version=1
 [eeschema]
@@ -59,13 +69,4 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=F:/Program Files/KiCad/share/kicad/library/switches
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=
-SpiceForceRefPrefix=0
-SpiceUseNetNumbers=0
-LabSize=60
+LibName31=F:/Program Files/KiCad/share/kicad/library/motor_drivers
