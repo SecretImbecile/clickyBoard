@@ -40,7 +40,7 @@ Title "clickyBoard"
 Date "2017-07-26"
 Rev "1.1"
 Comp ""
-Comment1 ""
+Comment1 "• LEDs are now all parallel to each other (allows a forward voltage of >2.5V)"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -167,10 +167,10 @@ F 3 "" H 2800 4050 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R4
+L R R6
 U 1 1 596FEDB1
 P 1900 4450
-F 0 "R4" V 1980 4450 50  0000 C CNN
+F 0 "R6" V 1980 4450 50  0000 C CNN
 F 1 "150" V 1900 4450 50  0000 C CNN
 F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 1830 4450 50  0001 C CNN
 F 3 "" H 1900 4450 50  0001 C CNN
@@ -214,10 +214,10 @@ F 3 "" H 2900 5050 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R3
+L R R5
 U 1 1 596FF538
 P 2200 4450
-F 0 "R3" V 2280 4450 50  0000 C CNN
+F 0 "R5" V 2280 4450 50  0000 C CNN
 F 1 "150" V 2200 4450 50  0000 C CNN
 F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 2130 4450 50  0001 C CNN
 F 3 "" H 2200 4450 50  0001 C CNN
@@ -225,10 +225,10 @@ F 3 "" H 2200 4450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R6
+L R R4
 U 1 1 596FF58B
 P 2500 4450
-F 0 "R6" V 2580 4450 50  0000 C CNN
+F 0 "R4" V 2580 4450 50  0000 C CNN
 F 1 "150" V 2500 4450 50  0000 C CNN
 F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 2430 4450 50  0001 C CNN
 F 3 "" H 2500 4450 50  0001 C CNN
@@ -236,10 +236,10 @@ F 3 "" H 2500 4450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R5
+L R R3
 U 1 1 596FF5DF
 P 2800 4450
-F 0 "R5" V 2880 4450 50  0000 C CNN
+F 0 "R3" V 2880 4450 50  0000 C CNN
 F 1 "150" V 2800 4450 50  0000 C CNN
 F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 2730 4450 50  0001 C CNN
 F 3 "" H 2800 4450 50  0001 C CNN

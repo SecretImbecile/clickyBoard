@@ -13,14 +13,18 @@
 \setlength{\parindent}{0pt}
 
 %opening
-\title{Documentation for the clickyBoard}
+\title{\textbf{clickyBoard} Documentation}
 \author{}
 \date{}
 
 \begin{document}
 \maketitle
-\vspace{-40pt}
+\vspace{-60pt}
 
+\begin{center}
+	\textit{For board version 1.1}
+\end{center}
+\vspace{-12pt}
 Download this document at \href{https://github.com/SecretImbecile/clickyBoard}{github.com/SecretImbecile/clickyBoard}
 \tableofcontents
 
@@ -42,7 +46,7 @@ Download this document at \href{https://github.com/SecretImbecile/clickyBoard}{g
 	\begin{itemize}[noitemsep]
 		\item two $1 k\Omega$ resistors
 		\item four T1 (3mm) LEDs
-		\item two/four resistors, of a value determined in \autoref{LEDresistors}
+		\item four resistors, of a value determined in \autoref{LEDresistors}
 		\item one TO-220 package logic level power MOSFET
 		\item four Cherry MX compatible switches
 		\item a female 40-pin connector for the Raspberry Pi GPIO header\footnote{a $2\times20$ header with $2.54 mm$ ($0.1"$) pitch}
@@ -59,11 +63,13 @@ Download this document at \href{https://github.com/SecretImbecile/clickyBoard}{g
 		\label{fig:cherrymx}
 	\end{figure}
 	
-	If you require quick delivery, the german manufactured \textit{Cherry MX} series of switches are more readily available from several on-line retailers. In the United Kingdom, one possibility would be a computer hardware retailer like \href{http://www.kustompcs.co.uk/acatalog/Keys_and_Accessories.html}{kustompcs.co.uk}. In the US and internationally, \href{http://www.wasdkeyboards.com/index.php/products/keyboard-parts.html}{wasdkeyboards.com} specialises in mechanical keyboard parts. Cherry switches are likely to cost around \pounds1 per switch.
+	If you require quick delivery, the german manufactured \textbf{Cherry MX} series of switches are more readily available from several on-line retailers. In the United Kingdom, one possibility would be a computer hardware retailer like \href{http://www.kustompcs.co.uk/acatalog/Keys_and_Accessories.html}{kustompcs.co.uk}. In the US and internationally, \href{http://www.wasdkeyboards.com/index.php/products/keyboard-parts.html}{wasdkeyboards.com} specialises in mechanical keyboard parts. Cherry switches are likely to cost around \pounds1 per switch.
 	
-	If you're willing to wait for shipping from China, there are several manufacturers that make compatible switches, notably \textit{Gateron} and \textit{Kailh} switches. Gateron switches can be purchased on eBay for as little as 10 for \pounds1.
+	If you're willing to wait for shipping from China, there are several manufacturers that make compatible switches, notably \textbf{Gateron} and \textit{Kailh} switches. Gateron switches can be purchased on eBay for as little as 10 for \pounds1.
 	
-	There are several types of MX switch available, denoted by the colour of their centre plunger, as shown in \autoref*{fig:cherrymx}. We recommend blue coloured switches, for full authentic clickiness, but others are available. If possible, opt for `PCB mount' switches (sometimes referred to as `5-pin'), as these have additional plastic pegs which will somewhat improve stability on the PCB.
+	There are several types of MX switch available, denoted by the colour of their centre plunger, as shown in \autoref*{fig:cherrymx}. We recommend \textbf{blue} coloured switches, for full authentic clickiness, but others are available.
+	
+	If possible, opt for `\textbf{PCB mount}' switches (sometimes referred to as `5-pin'), as these have additional plastic pegs which will ensure the switches are correctly oriented. Using `plate mount' switches will usually result in slightly misaligned switches.
 	
 	\begin{center}
 	\begin{tabular}{c|c|c|c}
@@ -85,30 +91,19 @@ Download this document at \href{https://github.com/SecretImbecile/clickyBoard}{g
 
 	To fit within the housing of an MX compatible switch, a 3mm (T1) LED must be chosen.
 	
-	To provide ample current, the LEDs on the clickyBoard are powered through the Raspberry Pi's 5 volt supply, with the LEDs arranged in two parallel series, as shown in \autoref*{fig:documentation}.
+	To provide sufficient current, the LEDs on the clickyBoard are powered through the Raspberry Pi's 5 volt supply, rather than the current-limited 3V3 GPIO pins, and are instead controlled using a power MOSFET and a single GPIO output.
 	
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=0.25\linewidth]{img/resistor}
-		\caption{Wiring schematic for the four resistor sockets}
-		\label{fig:documentation}
-	\end{figure}
-	
-	The required resistance for the circuit can be calculated using the standard formula, where $V_s$ is the supply voltage, and $V_f$ is the forward voltage of the chosen LED.
+	Each LED has a resistor in series. The required resistance for the circuit can be calculated using this variant of the standard resistance formula, where $V_s$ is the supply voltage, and $V_f$ is the forward voltage of the chosen LED.
 	
 	\begin{displaymath}
 		R = \frac{V_s - V_f}{I}
 	\end{displaymath}
 	
-	As each half has two LEDs in series, the forward voltage used is double the value of a single LED. For the $2 V$ $20 mA$ LEDs used in the schematic, the resistance was calculated as follows.
+	For the red $2 V$ $20 mA$ LEDs used in the schematic, the resistance for the LED resistors was calculated as follows.
 	
 	\begin{displaymath}
-		R = \frac{5 V - (2 \times 2 V)}{20 \times 10^{-3}} = 50 \Omega
+		R = \frac{5 V - 2 V}{20 \times 10^{-3} A} = 150 \Omega
 	\end{displaymath}
-	
-	The circuit can therefore be completed with two $50 \Omega$ resistors. Two additional spaces are provided, so four $100 \Omega$ resistors could be used if they are more readily available.
-	
-	%Because each LED has a forward voltage $\le 2.5 V$, blue LEDs cannot normally be used. Read \autoref{LEDerror2} for more information.
 
 \newpage
 \section{Assembly Guide}
@@ -126,17 +121,15 @@ Download this document at \href{https://github.com/SecretImbecile/clickyBoard}{g
 	
 		For convenience, we always solder components from lowest height to highest, to maintain a steady PCB on which to work. Begin by soldering the two $1 k\Omega$ resistors in slots \texttt{r1} and \texttt{r2}.
 		
-		Next, solder the resistors for the LED array that you chose in \autoref{LEDresistors} into the sockets \texttt{r3}--\texttt{r6}. If you are using two resistors, ensure the circuit is completed1 in accordance to \autoref*{fig:documentation}.
+		Next, solder the resistors for the LEDs that you chose in \autoref{LEDresistors} into the sockets \texttt{r3}--\texttt{r6}.
 	
 	\subsection*{MOSFET}
 	
-		Bend the legs of your TO-220 package MOSFET to a 90 degree angle and place it in the socket so that the large metal tab is flush with the PCB, then solder the three pins. You can optionally solder the tab to the plated mounting hole.
+		Bend the legs of your TO-220 package MOSFET to a 90 degree angle and place it in the socket so that the large metal tab is flush with the PCB. You can optionally solder the tab to the large pad on the board, then solder the three main pins into their holes.
 		
-		If you are \textbf{not} using a MOSFET to control the LEDs, you should jumper the two outermost pins with a piece of insulated wire or an $\approx0 \Omega$ resistor. Ensure that the jumper wire does not short with the centre contact pad.
+		If you are \textbf{not} using a MOSFET to control the LEDs, you should jumper the two topmost pins, either by bridging the holes with solder, or with a piece of wire.
 	
 	\subsection*{Switches \& LEDs}
-	
-		%note: solder pad shapes for the LEDs are reversed from the usual convention. see \autoref{LEDerror} for more details.
 	
 		\subsubsection*{Switch assembly}
 	
@@ -212,7 +205,7 @@ while True:
 	
 	\newpage
 	\subsection{PCB layout for the clickyBoard}
-		Gerber outputs (with additional layers) are available on the \href{https://github.com/SecretImbecile/clickyBoard}{github repo}.
+		Gerber outputs (with additional layers) are available on the \href{https://github.com/SecretImbecile/clickyBoard}{GitHub repo}.
 		\subsubsection*{Front Copper}
 			\begin{center}
 				\includegraphics[width=0.7\linewidth]{img/F_Cu}
@@ -235,7 +228,8 @@ while True:
 			\hline 
 			$0.2 mm$ & $\ge 0.375 mm$ & n/a & $\ge 0.15 mm$ \\ 
 		\end{tabular}
-	
+
+\iffalse
 	\subsection{Board errors in version 1.0}
 	
 		\subsubsection*{MOSFET miswiring}
@@ -260,10 +254,12 @@ while True:
 		Due to the series arrangement of the LEDs in board version 1.0, blue LEDs would not be useable, this has been rectified in version 1.1.
 		
 		LEDs were arranged into 2 parallel series as shown in \autoref{fig:documentation}, providing each LED a maximum voltage of 2.5V. Because blue LEDs require a higher forward voltage, most blue and white LEDs will not work on version 1.0 of the clickyBoard, limiting you to red, yellow or green backlighting for most LEDs.
+\fi
 
+\newpage
 \section{License}
 
-	The complete hardware design for the clickyBoard, including the files made available on the clickyBoard \href{https://github.com/SecretImbecile/clickyBoard}{Github repo} and all documentation, are released in accordance with the \href{https://www.oshwa.org/definition/}{Open Source Hardware (OSHW) Definition}, under the \href{https://creativecommons.org/licenses/by-sa/4.0/}{\textbf{Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)}} license.
+	The complete hardware design for the clickyBoard, including the files made available on the clickyBoard \href{https://github.com/SecretImbecile/clickyBoard}{GitHub repo} and all documentation, are released in accordance with the \href{https://www.oshwa.org/definition/}{Open Source Hardware (OSHW) Definition}, under the \href{https://creativecommons.org/licenses/by-sa/4.0/}{\textbf{Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)}} license.
 	
-	Every effort has been made to comply with the OSHW statement of principles. If you feel any aspect of the OSHW priciples have been neglected, please raise the issue with the creator (a github issue report would be suitable).
+	Every effort has been made to comply with the OSHW statement of principles. If you feel any aspect of the OSHW priciples have been neglected, please raise the issue with the creator (a GitHub issue report would be suitable).
 \end{document}
